@@ -14,8 +14,8 @@ console.log(total);
 const filter = panier.filter(e => e.prix > 100)
 console.log(filter.map(e => e.nom));
 
-const price = panier.map(e => e.prix)
-const totalPrice = price.reduce((acc , val) => acc + val , 0)
+// const price = panier.map(e => e.prix)
+const totalPrice = panier.reduce((acc , val) => acc = acc + (val.prix * val.quantite ) , 0)
 
 console.log(totalPrice);
 
