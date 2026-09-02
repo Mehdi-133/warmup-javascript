@@ -25,10 +25,12 @@ function initials(){
 }
 
 function generateSlug(name){
-    const turn = name.split(" ")
-    log
+
+    const clean = name.replace(',' , '-').replace(' ' , '-')
+     return clean
+    
 }
 
-console.log(generateSlug());
+console.log(generateSlug("mehdi jjj"));
 console.log(compteMot());
 console.log(initials());
