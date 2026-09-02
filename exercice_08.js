@@ -19,16 +19,10 @@ function validInscription(donnees) {
   }
   if (inscription.motDePasse < 8) {
     errors.push("password invalid");
-  }
-  if (errors.length === 0) {
-    return {
-      valid: true,
-      errors: [],
-    };
   } else {
     return {
-      valid: false,
-      errors: errors,
+      valid: errors.length === 0,
+      errors,
     };
   }
 }
