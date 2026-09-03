@@ -23,7 +23,7 @@ function calculateCommand(montant, statut) {
   let remise = montant * remisePersent;
 
   if (statut === "premium") {
-    remise = remise + 5;
+    remisePersent = remisePersent + 0.05;
   }
 
   const afterRemise = montant - remise;
@@ -42,4 +42,4 @@ function calculateCommand(montant, statut) {
   };
 }
 
-console.log(calculateCommand(620, "premium"));
+console.log(calculateCommand(1200, "premium"));
