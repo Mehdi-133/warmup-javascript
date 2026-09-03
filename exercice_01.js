@@ -19,7 +19,7 @@ function checkAge(){
 }
 
 function checkFormation(){
-    if (enFormation = true) {
+    if (enFormation === true) {
         return "En formation " +  " " + ":" + true
     }
 
