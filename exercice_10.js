@@ -19,17 +19,36 @@ const revenu = ventes
 const bigger = ventes.reduce((big, montant) =>
   montant.montant > big.montant ? montant : big,
 );
-const names = ventes
-  .map((names) => names.vendeur)
-  .reduce((revenueCount, value) => revenueCount.montant + value);
 
-// const caParVandeur = {
+const caParVenduer = ventes.reduce((sale, montant) => {
+  if (!sale[montant.vendeur]) {
+    sale[montant.vendeur] = 0;
+  }
 
-//   names :
+  sale[montant.vendeur] += montant.montant;
 
-// }
+  return sale;
+}, {});
 
-console.log(names);
+const keys = Object.keys(caParVenduer).length;
+const avg = revenu / keys;
 
-console.log("the revenu is : " + revenu);
-console.log(bigger.produit + " " + bigger.vendeur + " " + "-" + bigger.montant);
+
+
+function genererRapport(ventes) {
+
+  console.log(" --rapport de vents-- " );
+  
+  console.log("the revenu is : " + revenu);
+  console.log(
+    bigger.produit + " " + bigger.vendeur + " " + "-" + bigger.montant,
+  );
+  console.log(caParVenduer);
+  console.log("avg for sallers : " + avg);
+  console.log( "avg behind: " +  bigger.vendeur);
+  
+}
+
+
+
+console.log(genererRapport(ventes));
